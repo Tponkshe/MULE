@@ -1,7 +1,0 @@
-
-public class GameConfigModel {
-	private int difficulty;
-	private int mapType;
-	private int numberOfPlayers;
-	
-}
