@@ -3,7 +3,7 @@ public class GameConfigModel {
 	private int mapType;
 	private int numberOfPlayers;
 	
-	GameConfigModel()
+	public GameConfigModel()
 	{
 		difficulty = 0;
 		mapType = 0;

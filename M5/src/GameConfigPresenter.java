@@ -36,6 +36,7 @@ public class GameConfigPresenter {
 	
 	public static void main(String[] args)
 	{
+		System.out.println("hello");
 		GameConfigView view = new GameConfigView();
 		GameConfigModel model = new GameConfigModel();
 		GameConfigPresenter p = new GameConfigPresenter(view, model);
