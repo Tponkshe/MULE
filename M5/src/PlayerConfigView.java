@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class PlayerScreen {
+public class PlayerConfigView {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -14,7 +14,7 @@ public class PlayerScreen {
 
 	/**
 	 * Launch the application.
-	 */
+	 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -26,12 +26,12 @@ public class PlayerScreen {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the application.
 	 */
-	public PlayerScreen() {
+	public PlayerConfigView() {
 		initialize();
 	}
 
