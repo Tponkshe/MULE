@@ -22,6 +22,7 @@ public class GameConfigPresenter {
 	
 	public void onSubmit()
 	{
+		System.out.println(view.getDifficultyValue());
 		model.setDifficulty(view.getDifficultyValue());
 		model.setNumberOfPlayers(view.getNumberOfPlayersValue());
 		model.setMapType(view.getMapTypeValue());
@@ -36,7 +37,6 @@ public class GameConfigPresenter {
 	
 	public static void main(String[] args)
 	{
-		System.out.println("hello");
 		GameConfigView view = new GameConfigView();
 		GameConfigModel model = new GameConfigModel();
 		GameConfigPresenter p = new GameConfigPresenter(view, model);
