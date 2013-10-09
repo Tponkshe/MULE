@@ -135,4 +135,8 @@ public class GameConfigView extends JFrame
 		spinner_1.setBounds( 208, 134, 43, 20 );
 		frame.getContentPane().add( spinner_1 );
 	}
+
+	public void noShow() {
+	    this.setVisible(false);
+	}
 }
