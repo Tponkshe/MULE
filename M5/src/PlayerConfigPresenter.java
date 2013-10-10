@@ -34,8 +34,8 @@ public class PlayerConfigPresenter
 	{
 		// STEP 3: UPDATE IN THE MODEL THE VALUE YOU GET FROM VIEW
 		for (int i = 0; i < numPlayers; i++) {
-			System.out.println("Name set to " + view.getPlayerNames()[i]);
-			model.setName( view.getPlayerNames()[i] );
+			model.getPlayer( i ).setName( view.getPlayerNames()	[i] );
+			System.out.println("Name set to " + view.getPlayerNames()[i] + " for Player " + i);
 		}
 	}
 

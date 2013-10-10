@@ -1,43 +1,17 @@
 
 public class PlayerConfigModel {
-	String name;
-	String race;
-	String color;
+	Player[] players;
 
 	PlayerConfigModel()
 	{
-		name = "";
-		race = "";
-		color = "";
+		players = new Player[4];
+		for ( int i = 0; i < 4; i++ )
+		{
+			players[i] = new Player();
+		}
 	}
 	
-	public String getName()
-	{
-		return name;
-	}
-	
-	public void setName(String n)
-	{
-		name=n;
-	}
-	
-	public String getRace()
-	{
-		return race;
-	}
-	
-	public void setRace(String n)
-	{
-		race =n;
-	}
-	
-	public String getColor()
-	{
-		return color;
-	}
-	
-	public void setColor(String n)
-	{
-		color=n;
+	public Player getPlayer(int i) {
+		return players[i];
 	}
 }
