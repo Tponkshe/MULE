@@ -1,47 +1,44 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GameConfigPresenter {
+import javax.swing.JFrame;
 
-    private GameConfigView view;
-    private GameConfigModel model;
+public class GameConfigPresenter
+{
 
-    GameConfigPresenter(GameConfigView view, GameConfigModel model) {
-	this.view = view;
-	this.model = model;
+	private GameConfigView view;
+	private GameConfigModel model;
+	
+	public GameConfigPresenter( GameConfigView view, GameConfigModel model )
+	{
+		this.view = view;
+		this.model = model;
+		
+		this.view.addActionListener(new ActionListener()
+		{
+			
+			@Override
+			public void actionPerformed( ActionEvent e )
+			{
+				onSubmit();
+			}
+		});
+	}
 
-	view.addActionListener(new ActionListener() {
-	    @Override
-	    public void actionPerformed(ActionEvent arg0) {
-		onSubmit();
-	    }
-	});
+	public void onSubmit()
+	{
+		model.setDifficulty( view.getDifficultyValue() );
+		int a =  view.getDifficultyValue();
+		System.out.println(a);
+		PlayerConfigPresenter p = new PlayerConfigPresenter( view );
+	}
 
-	this.start();
-    }
-
-    public void onSubmit() {
-	System.out.println("Difficulty is " + view.getDifficultyValue());
-	model.setDifficulty(view.getDifficultyValue());
-	model.setNumberOfPlayers(view.getNumberOfPlayersValue());
-	model.setMapType(view.getMapTypeValue());
-	//this.stop(); // TODO 
-	PlayerConfigPresenter p = new PlayerConfigPresenter();
-    }
-
-    public void start() {
-	view.show();
-    }
-    
-    public void stop() {
-	view.noShow();
-    }
-    
-
-    public static void main(String[] args) {
-	GameConfigView view = new GameConfigView();
-	GameConfigModel model = new GameConfigModel();
-	GameConfigPresenter p = new GameConfigPresenter(view, model);
-    }
+	public static void main( String[] args )
+	{
+		GameConfigPanel panel = new GameConfigPanel();
+		GameConfigView view = new GameConfigView( panel );
+		GameConfigModel model = new GameConfigModel();
+		GameConfigPresenter p = new GameConfigPresenter( view, model );
+	}
 
 }
