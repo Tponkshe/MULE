@@ -11,23 +11,31 @@ import javax.swing.JSlider;
 import javax.swing.JSpinner;
 import javax.swing.SwingConstants;
 
-
 public class GameConfigPanel extends JPanel
 {
 	JLabel lblNewLabel;
 	JSpinner spinner;
 	private JButton btnNewButton;
 	private JSlider slider;
-	
-	public void addActionListener( ActionListener l) {
+
+	public void addActionListener( ActionListener l )
+	{
 		btnNewButton.addActionListener( l );
 	}
-	
+
 	public int getDifficultyValue()
 	{
-		return (Integer )this.slider.getValue();
+		return (Integer) this.slider.getValue();
 	}
-	public GameConfigPanel() {
+
+	public int getNumPlayers()
+	{
+		
+		return (Integer) this.spinner.getValue();
+	}
+
+	public GameConfigPanel()
+	{
 		this.setLayout( null );
 		JLabel lblNewLabel = new JLabel( "M.U.L.E." );
 		lblNewLabel.setFont( new Font( "Times New Roman", Font.BOLD, 28 ) );
@@ -91,7 +99,7 @@ public class GameConfigPanel extends JPanel
 		JSpinner spinner_1 = new JSpinner();
 		spinner_1.setBounds( 208, 134, 43, 20 );
 		this.add( spinner_1 );
-		
+
 		btnExit.addActionListener( new ActionListener()
 		{
 			public void actionPerformed( ActionEvent e )
