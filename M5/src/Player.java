@@ -1,4 +1,8 @@
 
+/**
+ * @author yee
+ * Info holder for player's name,race,color
+ */
 public class Player
 {
 	String name;

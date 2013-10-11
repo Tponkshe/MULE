@@ -7,6 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JSpinner;
 
+/**
+ * @author yee
+ * Init JFrame that changes panels, getters and setters for each possible variable
+ */
 public class View extends JFrame
 {
 	JSlider slider;
@@ -33,10 +37,17 @@ public class View extends JFrame
 		return ( (GameConfigPanel) panel ).getDifficultyValue();
 	}
 	
-	// STEP 2: IMPLEMENT FUNCTION TO GET THE VALUE FROM VIEW
 	public String[] getPlayerNames()
 	{
 		return ((PlayerConfigPanel) panel).getNames();
+	}
+	
+	public String[] getPlayerColors() {
+	    return ((PlayerConfigPanel) panel).getColors();
+	}
+	
+	public String[] getPlayerRaces() {
+	    return ((PlayerConfigPanel) panel).getRaces();
 	}
 	
 	public int getNumPlayers() {
@@ -66,6 +77,10 @@ public class View extends JFrame
 			PlayerConfigPanel myPanel = (PlayerConfigPanel) this.panel;
 			myPanel.addActionListener( l );
 		}
+	}
+
+	public int getMapType() {
+	    return ((GameConfigPanel)panel).getMapType();
 	}
 
 }

@@ -3,48 +3,61 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-public class GameConfigPresenter
-{
+/**
+ * @author yee
+ * update game config model with view values
+ */
+public class GameConfigPresenter {
 
-	private View view;
-	private GameConfigModel model;
+    private View view;
+    private GameConfigModel model;
 
-	public GameConfigPresenter( View view, GameConfigModel model )
-	{
-		this.view = view;
-		this.model = model;
+    /**
+     * init view and model instances, set listener to next
+     * @param view gameconfig view
+     * @param model gameconfig model
+     */
+    public GameConfigPresenter(View view, GameConfigModel model) {
+	this.view = view;
+	this.model = model;
 
-		this.view.addActionListener( new ActionListener()
-		{
-			@Override
-			public void actionPerformed( ActionEvent e )
-			{
-				onSubmit();
-			}
-		} );
+	this.view.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		onSubmit();
+	    }
+	});
+    }
+
+    /**
+	 *	Called when hit next button, updates the model
+	 */
+    public void onSubmit() {
+	// update diff, num, and map
+	model.setDifficulty(view.getDifficultyValue());
+	model.setNumberOfPlayers(view.getNumPlayers());
+	model.setMapType(view.getMapType());
+
+	System.out.println("Model.difficulty = " + model.getDifficulty());
+	System.out.println("model.num = " + model.getNumberOfPlayers());
+	System.out.println("model.mapType = " + model.getMapType());
+
+	// check if 0 entered -- bad!
+	if (view.getNumPlayers() == 0) {
+	    System.out.println("num players cant be 0 dummy");
+	} else {
+	    PlayerConfigPresenter p = new PlayerConfigPresenter(view,
+		    view.getNumPlayers());
 	}
+    }
 
-	public void onSubmit()
-	{
-		model.setDifficulty( view.getDifficultyValue() );
-
-		if (view.getNumPlayers() == 0)
-		{
-			System.out.println( "num players cant be 0 dummy" );
-		}
-		else
-		{
-			PlayerConfigPresenter p = new PlayerConfigPresenter( view,
-					view.getNumPlayers() );
-		}
-	}
-
-	public static void main( String[] args )
-	{
-		GameConfigPanel panel = new GameConfigPanel();
-		View view = new View( panel );
-		GameConfigModel model = new GameConfigModel();
-		GameConfigPresenter p = new GameConfigPresenter( view, model );
-	}
+    public static void main(String[] args) {
+	GameConfigPanel panel = new GameConfigPanel();
+	View view = new View(panel);
+	GameConfigModel model = new GameConfigModel();
+	
+	// Make presenter
+	GameConfigPresenter p = new GameConfigPresenter(view, model);
+    }
 
 }
