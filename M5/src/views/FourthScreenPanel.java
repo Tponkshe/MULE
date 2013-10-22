@@ -1,3 +1,5 @@
+package views;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
@@ -11,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
-public class FourthScreen {
+public class FourthScreenPanel {
 
 	private JFrame frame;
 	public JButton[][] buttonArray = new JButton[5][9];
@@ -23,7 +25,7 @@ public class FourthScreen {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FourthScreen window = new FourthScreen();
+					FourthScreenPanel window = new FourthScreenPanel();
 					window.frame.setVisible(true);
 				} catch (Exception e){
 					e.printStackTrace();
@@ -35,7 +37,7 @@ public class FourthScreen {
 	/**
 	 * Create the application.
 	 */
-	public FourthScreen() {
+	public FourthScreenPanel() {
 		initialize();
 	}
 
@@ -109,6 +111,7 @@ public class FourthScreen {
 					public void mouseClicked(MouseEvent arg0) {
 						button.setBorder(BorderFactory.createBevelBorder(1, Color.BLUE, Color.black));
 						button.setEnabled(false);
+						button.setVisible(true);
 						panel.repaint();
 					}
 				});
