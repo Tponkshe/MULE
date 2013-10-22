@@ -1,3 +1,4 @@
+package views;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,7 +11,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
 
-public class ThirdScreen {
+public class ThirdScreenPanel {
 
 	private JFrame frame;
 
@@ -21,7 +22,7 @@ public class ThirdScreen {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ThirdScreen window = new ThirdScreen();
+					ThirdScreenPanel window = new ThirdScreenPanel();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,7 +34,7 @@ public class ThirdScreen {
 	/**
 	 * Create the application.
 	 */
-	public ThirdScreen() {
+	public ThirdScreenPanel() {
 		initialize();
 	}
 
