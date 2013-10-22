@@ -102,7 +102,8 @@ public class FourthScreenPanel {
 		for(int i=0;i<5;i++){
 			for(int j=0;j<9;j++){
 				final JButton button = new JButton("");
-				button.setIcon(new ImageIcon("/Users/ishaangrover/M5/M5/src/temp/images/map1_"+(n+1)+".gif"));
+				//change directory - nikhils- /Users/nikhilkarajgikar/Dev/CS 2340/MULE/M5
+				button.setIcon(new ImageIcon("/Users/nikhilkarajgikar/Dev/M5/src/temp/images/map1_"+(n+1)+".gif"));
 				n++;
 				button.setBounds(80*j, 80*i, 80, 80);
 				button.setName(landArr[i][j]);
